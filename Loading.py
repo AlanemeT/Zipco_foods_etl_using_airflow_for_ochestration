@@ -6,11 +6,11 @@ import os
 # Data Loading into Azure Blob storage
 def run_loading():
     # Loading the dataset
-    data = pd.read_csv(r'clean_data.csv')
-    product = pd.read_csv(r'product.csv')
-    customer = pd.read_csv(r'customer.csv')
-    staff = pd.read_csv(r'staff.csv')
-    transaction = pd.read_csv(r'transaction.csv')
+    data = pd.read_csv('/home/alaneme/airflow/zipco_food_dag/clean_data.csv')
+    product = pd.read_csv('/home/alaneme/airflow/zipco_food_dag/product.csv')
+    customer = pd.read_csv('/home/alaneme/airflow/zipco_food_dag/customer.csv')
+    staff = pd.read_csv('/home/alaneme/airflow/zipco_food_dag/staff.csv')
+    transaction = pd.read_csv('/home/alaneme/airflow/zipco_food_dag/transaction.csv')
     # Load the environment variables from the .env files
     load_dotenv()
 

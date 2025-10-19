@@ -1,7 +1,8 @@
 import pandas as pd
+import os
 
 def run_transformation():
-    data = pd.read_csv('zipco_transaction.csv')
+    data = pd.read_csv('/home/alaneme/airflow/zipco_food_dag/zipco_transaction.csv')
     # Data Cleaning and transformation
     # Remove duplicates
     data.drop_duplicates(inplace=True)
@@ -47,11 +48,11 @@ def run_transformation():
                                 'PromotionApplied', 'Weather', 'Temperature', 'DeliveryTime_min','OrderType', 'CustomerID', \
                                     'StaffID', 'DayOfWeek','TotalSales']]
 
-    # Save date as csv file
-    data.to_csv('clean_data.csv', index=False)
-    product.to_csv('product.csv', index=False)
-    customer.to_csv('customer.csv', index=False)
-    staff.to_csv('staff.csv', index=False)
-    transaction.to_csv('transaction.csv', index=False)
+    # Save data as csv file
+    data.to_csv('/home/alaneme/airflow/zipco_food_dag/clean_data.csv', index=False)
+    product.to_csv('/home/alaneme/airflow/zipco_food_dag/product.csv', index=False)
+    customer.to_csv('/home/alaneme/airflow/zipco_food_dag/customer.csv', index=False)
+    staff.to_csv('/home/alaneme/airflow/zipco_food_dag/staff.csv', index=False)
+    transaction.to_csv('/home/alaneme/airflow/zipco_food_dag/transaction.csv', index=False)
 
     print('Data Cleaning and Transformation completed Successful')

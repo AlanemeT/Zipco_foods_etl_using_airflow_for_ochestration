@@ -1,6 +1,6 @@
-from datetime import datetime
 from airflow import DAG
-from airflow.operators.python_operator import PythonOperator
+from datetime import datetime, timedelta
+from airflow.operators.python import PythonOperator
 from Extraction import run_extraction
 from Transformation import run_transformation
 from Loading import run_loading
@@ -10,8 +10,8 @@ default_args = {
     'depends_om_past' : False,
     'start_date' : datetime(2025, 10, 17),
     'email' : 'alanemetochukwu@yahoo.com',
-    'email_on_failure' : True,
-    'email_on_retry' : True,
+    'email_on_failure' : False,
+    'email_on_retry' : False,
     'retries' : 1,
     'retries_delay' : timedelta(minutes=1)
 

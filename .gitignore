@@ -1,5 +1,7 @@
 # Files to be ignored
 .env
+create_user.txt
 
 # folder to be ignored
 zipcoenv
+zipcowslenv
